@@ -13,7 +13,9 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
     expand: ["default_price"],
   });
 
-  return <ProductDetail product={product} />;
+  const plainProduct = JSON.parse(JSON.stringify(product));
+
+  return <ProductDetail product={plainProduct} />;
 };
 
 export default ProductPage;
